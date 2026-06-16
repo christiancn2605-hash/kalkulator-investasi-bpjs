@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #eaf7e8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #6fbf73;
+    box-shadow: 0 0 0 3px rgba(111, 191, 115, 0.15);
+}
+
+button {
+    background: #4caf50;
+    color: white;
+    border: none;
+    font-weight: 600;
+    transition: 0.2s;
+    margin-top: 40px;
+}
+
+button:hover {
+    background: #43a047;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
+}
+
+#result {
+    margin-top: 30px;
+    padding: 30px;
+    text-align: center;
+    background: #eef5ee;
+    border-radius: 12px;
+}
+
+.result-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.result-value {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Chrome, Edge, Safari */
+#interest::-webkit-outer-spin-button,
+#interest::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+#interest {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
