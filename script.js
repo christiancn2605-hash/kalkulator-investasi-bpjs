@@ -1,5 +1,5 @@
 async function calculate() {
-
+    
     // Get form values
     const name =
         document.getElementById("name").value.trim();
@@ -22,6 +22,17 @@ async function calculate() {
     const interest =
         Number(document.getElementById("interest").value);
 
+    document.getElementById("result-name").innerHTML =
+    `Halo, ${name || "User"}`;
+
+    document.getElementById("result").innerHTML =
+`
+<div class="spinner"></div>
+
+<div class="calculating-text">
+    Calculating...
+</div>
+`;
 
     // ===== Required Field Validation =====
 
@@ -63,7 +74,11 @@ async function calculate() {
 
     // ===== Age Calculation =====
 
-    const birthDate = new Date(birthDateText);
+    const [day, month, year] =
+    birthDateText.split("/");
+
+    const birthDate =
+    new Date(year, month - 1, day);
 
     const today = new Date();
 
@@ -147,16 +162,43 @@ async function calculate() {
         const investment =
     Math.round(Number(result.investment));
 
+document.getElementById("result-card").style.display =
+    "block";
+
+document.getElementById("result-name").innerHTML =
+    "";
+
+document.getElementById("result").innerHTML =
+`
+<div class="spinner"></div>
+
+<div class="result-title">
+    Calculating...
+</div>
+`;
+
+document.getElementById("result-name").innerHTML =
+    `Halo, <strong>${name}</strong>`;
+
 document.getElementById("result").innerHTML =
 `
 <div class="result-title">
-    Dibutuhkan investasi:
+    Investasi yang dibutuhkan
 </div>
 
 <div class="result-value">
-    Rp${investment.toLocaleString("id-ID")}/tahun
+    Rp${investment.toLocaleString("id-ID")}/tahun 
+</div>
+
+<div style="
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #555;
+">
+    hingga usia ${savingAge}
 </div>
 `;
+
 
     } catch (error) {
 
@@ -234,3 +276,28 @@ document
 
     });
 }
+
+const birthDateInput =
+    document.getElementById("birthDate");
+
+birthDateInput.addEventListener("input", function () {
+
+    let value =
+        this.value.replace(/\D/g, "");
+
+    if (value.length > 2) {
+        value =
+            value.substring(0, 2) +
+            "/" +
+            value.substring(2);
+    }
+
+    if (value.length > 5) {
+        value =
+            value.substring(0, 5) +
+            "/" +
+            value.substring(5);
+    }
+
+    this.value = value.substring(0, 10);
+});

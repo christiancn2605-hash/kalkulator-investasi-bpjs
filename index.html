@@ -4,6 +4,7 @@
 <head>
     <title>Kalkulator Investasi BPJS</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
         <input id="name" placeholder="Masukkan nama Anda">
 
         <label>Tanggal Lahir</label>
-        <input type="date" id="birthDate">
+        <input type="text" id="birthDate" placeholder="DD/MM/YYYY" maxlength="10">
 
         <label>Jenis Kelamin</label>
         <select id="gender">
@@ -49,13 +50,33 @@
         <button onclick="calculate()">
             Calculate
         </button>
+        </div>
 
-        <h2 id="result"></h2>
+        <div id="result-card" class="result-card">
+            <h2>Investment Summary</h2>
 
+            <p id="result-name">
+    Ready to calculate
+</p>
+
+<div id="result">
+    Enter your information and click Calculate.
+</div>
+
+        
     </div>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+flatpickr("#birthDate", {
+    dateFormat: "d-m-Y",
+    allowInput: true
+});
+</script>
 </body>
 
 </html>
