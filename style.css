@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #eaf7e8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: min(950px, 92vw);
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #6fbf73;
+    box-shadow: 0 0 0 3px rgba(111, 191, 115, 0.15);
+}
+
+button {
+    background: #4caf50;
+    color: white;
+    border: none;
+    font-weight: 600;
+    transition: 0.2s;
+    margin-top: 40px;
+}
+
+button:hover {
+    background: #43a047;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
+}
+
+#result {
+    margin-top: 30px;
+    padding: 30px;
+    text-align: center;
+    background: #eef5ee;
+    border-radius: 12px;
+}
+
+.result-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.result-value {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Chrome, Edge, Safari */
+#interest::-webkit-outer-spin-button,
+#interest::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+#interest {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.result-card {
+    width: min(950px, 92vw);
+    margin: 30px auto;
+    padding: 35px;
+
+    background: #f5fff3;
+
+    border: 2px solid #cce8c8;
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.08);
+}
+
+.result-card h2 {
+    margin-top: 0;
+    color: #2d6a4f;
+}
+
+#result-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2d6a4f;
+    margin-bottom: 20px;
+}
+
+#result {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+
+    margin: 20px auto;
+
+    border: 5px solid #d8e8d8;
+    border-top: 5px solid #4caf50;
+
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.calculating-text {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #2d6a4f;
+    margin-top: 15px;
+    animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
